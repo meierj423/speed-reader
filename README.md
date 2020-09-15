@@ -1,4 +1,4 @@
-# Speed REader
+# Speed Reader
 
   [![Badge](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)
   
