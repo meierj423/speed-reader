@@ -15,24 +15,53 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
 
     <title>Speed Reader!</title>
   </head>
   <body>
-    <div class="input-group">
-      <div class="input-group-prepend"></div>
-      <textarea
-        class="form-control"
-        id="text-area"
-        placeholder="Enter passage here"
-        aria-label="With textarea"
-      ></textarea>
-    </div>
-    <button type="button" id="startBtn" class="btn btn-primary">Start</button>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center"><div class="heading">Speed Reader</div>
 
-    <h1 class="time"></h1>
-    <div id="main"></div>
-    <h1 class="text"></h1>
+      <div class="row">
+        <div class="col text-center">
+          <div class="input-group">
+            <div class="input-group-prepend"></div>
+            <textarea
+              style="margin-top: 5em"
+              class="form-control"
+              id="text-area"
+              placeholder="Enter passage here"
+              aria-label="With textarea"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+          <button
+            style="margin-top: 1em"
+            type="button"
+            id="startBtn"
+            class="btn btn-primary btn-block text-center"
+          >
+            Start
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col text-center" style="margin-top: 5em">
+          <h1 class="time"></h1>
+          <h1 class="text"></h1>
+        </div>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
     <script

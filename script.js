@@ -1,36 +1,38 @@
-let poem =
-  "Some say the world will end in 🔥, Some say in ice. From what I’ve tasted of desire, I hold with those who favor fire. But if it had to perish twice, I think I know enough of hate. To say that for destruction ice, Is also great, And would suffice.";
-
 let timeEl = document.querySelector(".time");
-let mainEl = document.getElementById("main");
 let textEl = document.querySelector(".text");
 document.getElementById("startBtn").addEventListener("click", prepareRead);
 
+let millisecondsPerWord = prompt(
+  "How many milliseconds between words would you like?"
+);
+millisecondsPerWord = parseInt(millisecondsPerWord); // convert string to number
+
 function prepareRead() {
-  let secondsLeft = 6;
+  let secondsLeft = 5;
   let timerInterval = setInterval(function () {
+    timeEl.textContent = secondsLeft + " seconds until Speed Reader beings...";
     secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds until Speed Reader beings.";
 
     if (secondsLeft === 0) {
       clearInterval(timerInterval);
       speedRead();
     }
-  }, 100);
+  }, 1000);
 }
 
 wordIndex = 0;
 function speedRead() {
   let textArea = document.getElementById("text-area").value;
+  console.log(textArea);
   timeEl.textContent = " ";
   let res = textArea.split(" ");
 
   let wordInterval = setInterval(function () {
-    wordIndex++;
     textEl.textContent = res[wordIndex];
+    wordIndex++;
 
     if (wordIndex == res.length) {
       clearInterval(wordInterval);
     }
-  }, 1000);
+  }, millisecondsPerWord);
 }

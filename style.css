@@ -1,0 +1,13 @@
+body {
+ background-image: url("paper.gif");
+ background-color: #cccccc;
+}
+
+.heading {
+  font-size: 10em;
+}
+
+.heading,
+#startBtn, textarea {
+  font-family: "Crimson Text", serif;
+}
