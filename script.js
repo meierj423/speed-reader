@@ -4,10 +4,10 @@ let poem =
 let timeEl = document.querySelector(".time");
 let mainEl = document.getElementById("main");
 let textEl = document.querySelector(".text");
-
-let secondsLeft = 6;
+document.getElementById("startBtn").addEventListener("click", prepareRead);
 
 function prepareRead() {
+  let secondsLeft = 6;
   let timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds until Speed Reader beings.";
@@ -21,9 +21,9 @@ function prepareRead() {
 
 wordIndex = 0;
 function speedRead() {
+  let textArea = document.getElementById("text-area").value;
   timeEl.textContent = " ";
-  let res = poem.split(" ");
-  console.log(res[0]);
+  let res = textArea.split(" ");
 
   let wordInterval = setInterval(function () {
     wordIndex++;
@@ -32,7 +32,5 @@ function speedRead() {
     if (wordIndex == res.length) {
       clearInterval(wordInterval);
     }
-  }, 100);
+  }, 1000);
 }
-
-prepareRead();
