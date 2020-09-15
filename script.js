@@ -3,6 +3,7 @@ let poem =
 
 let timeEl = document.querySelector(".time");
 let mainEl = document.getElementById("main");
+let textEl = document.querySelector(".text");
 
 let secondsLeft = 6;
 
@@ -13,13 +14,25 @@ function prepareRead() {
 
     if (secondsLeft === 0) {
       clearInterval(timerInterval);
-      showColorExplosion();
+      speedRead();
     }
-  }, 1000);
+  }, 100);
 }
 
+wordIndex = 0;
 function speedRead() {
-  // Print words to the screen one at a time.
+  timeEl.textContent = " ";
+  let res = poem.split(" ");
+  console.log(res[0]);
+
+  let wordInterval = setInterval(function () {
+    wordIndex++;
+    textEl.textContent = res[wordIndex];
+
+    if (wordIndex == res.length) {
+      clearInterval(wordInterval);
+    }
+  }, 100);
 }
 
 prepareRead();
